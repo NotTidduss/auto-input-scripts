@@ -1,18 +1,17 @@
 # Requirements:
-#  - Adell is positioned next to dimensional guide.
-#  - Cave of Ordeal is on the very bottom of the stage selection.
+#  - The Cave of Ordeal 4 Stage must be selected in the stage select.
 #  - Characters to be levelled must be on top of the character list.
 #  - Characters have the stats to one-shot (big bang + blade rush) enemies for as many clears as possible.
 
 ########## ------------ Key bindings ------------ ##########
 STOP_SCRIPT        = 'ESCAPE'
-ACTION_UP          = 'w'
-ACTION_LEFT        = 'a'
-ACTION_RIGHT       = 'd'
-ACTION_DOWN        = 's'
-ACTION_SELECT      = 'ENTER'
-ACTION_MENU        = 'TAB'
-ACTION_RETURN      = 'BACKSPACE'
+MOVE_UP          = 'w'
+MOVE_LEFT        = 'a'
+MOVE_RIGHT       = 'd'
+MOVE_DOWN        = 's'
+CONFIRM          = 'k'
+OPEN_MENU        = 'i'
+WAIT             = 'p'
 
 ################## Command infrastructure ##################
 import keyboard
@@ -34,17 +33,63 @@ class Command:
       keyboard.release(self.key)
 
 ### -- Scenario to select stage, move chars and clear -- ###
-# TODO: find, set and test inputs
-confirm_win = Command(ACTION_SELECT, 0.5)
-run_left = Command(ACTION_LEFT, 3)
-run_right = Command(ACTION_RIGHT, 3)
-stop = Command(ACTION_UP, 1, True)
+# configure commands
+move_up = Command(MOVE_UP, 0.1)
+move_left = Command(MOVE_LEFT, 0.1)
+move_right = Command(MOVE_RIGHT, 0.1)
+move_down = Command(MOVE_DOWN, 0.1)
+confirm = Command(CONFIRM, 0.1)
+open_menu = Command(OPEN_MENU, 0.1)
+wait = Command(WAIT, 3)
 
+# set commands
 commands = [
-	run_left, 
-	confirm_win, 
-	run_right, 
-	confirm_win
+    wait,
+	confirm,
+    wait,
+    confirm,
+    confirm,
+    confirm,
+    move_up,
+    move_up,
+    move_up,
+    move_up,
+    confirm,
+    confirm,
+    move_down,
+    move_down,
+    confirm,
+    move_up,
+    move_up,
+    confirm,
+    confirm,
+    move_down,
+    move_down,
+    move_down,
+    move_down,
+    confirm,
+    confirm,
+    confirm,
+    move_right,
+    move_right,
+    move_up,
+    move_up,
+    move_up,
+    move_up,
+    confirm,
+    confirm,
+    move_down,
+    move_down,
+    confirm,
+    move_down,
+    confirm,
+    confirm,
+    open_menu,
+    confirm,
+    wait,
+    confirm,
+    confirm,
+    wait
 	]
 
 ########################## Logic ###########################
