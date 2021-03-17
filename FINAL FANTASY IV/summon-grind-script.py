@@ -1,3 +1,7 @@
+# Requirements:
+#  - Character is positioned near spawn of desired item drop.
+#  - Characters are strong enough to not die after multiple encounters.
+
 ########## ------------ Key bindings ------------ ##########
 STOP_SCRIPT        = 'ESCAPE'
 ACTION_UP          = 'w'
@@ -8,9 +12,10 @@ ACTION_SELECT      = 'ENTER'
 ACTION_MENU        = 'TAB'
 ACTION_RETURN      = 'BACKSPACE'
 
-########################## Command infra ###########################
+################## Command infrastructure ###################
 import keyboard
 import time
+
 class Command:
   def __init__(self, key, duration, is_silence = False):
     self.key = key
@@ -31,11 +36,18 @@ confirm_win = Command(ACTION_SELECT, 0.5)
 run_left = Command(ACTION_LEFT, 3)
 run_right = Command(ACTION_RIGHT, 3)
 stop = Command(ACTION_UP, 1, True)
-commands = [run_left, confirm_win, run_right, confirm_win]
+
+commands = [
+	run_left, 
+	confirm_win, 
+	run_right, 
+	confirm_win
+	]
 
 ########################## Logic ###########################
 is_continue = True
 STOP_EVENT = keyboard.KeyboardEvent('down', STOP_SCRIPT, STOP_SCRIPT)
+
 def stop_script(keyboard_event):
   if(keyboard_event.name == STOP_EVENT.name):
     print("Goodbye.")
