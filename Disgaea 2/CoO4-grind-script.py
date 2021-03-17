@@ -1,8 +1,8 @@
-# Original: https://github.com/Belgarel/Dont_Farm/blob/master/summon.py
-
 # Requirements:
-#  - Character is positioned near spawn of desired item drop.
-#  - Characters are strong enough to not die after multiple encounters.
+#  - Adell is positioned next to dimensional guide.
+#  - Cave of Ordeal is on the very bottom of the stage selection.
+#  - Characters to be levelled must be on top of the character list.
+#  - Characters have the stats to one-shot (big bang + blade rush) enemies for as many clears as possible.
 
 ########## ------------ Key bindings ------------ ##########
 STOP_SCRIPT        = 'ESCAPE'
@@ -14,7 +14,7 @@ ACTION_SELECT      = 'ENTER'
 ACTION_MENU        = 'TAB'
 ACTION_RETURN      = 'BACKSPACE'
 
-################## Command infrastructure ###################
+################## Command infrastructure ##################
 import keyboard
 import time
 
@@ -33,7 +33,8 @@ class Command:
       time.sleep(self.duration)
       keyboard.release(self.key)
 
-########## -- Scenario to hunt weakest summons -- ##########
+### -- Scenario to select stage, move chars and clear -- ###
+# TODO: find, set and test inputs
 confirm_win = Command(ACTION_SELECT, 0.5)
 run_left = Command(ACTION_LEFT, 3)
 run_right = Command(ACTION_RIGHT, 3)
