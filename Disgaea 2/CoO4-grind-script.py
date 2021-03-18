@@ -38,58 +38,80 @@ move_up = Command(MOVE_UP, 0.1)
 move_left = Command(MOVE_LEFT, 0.1)
 move_right = Command(MOVE_RIGHT, 0.1)
 move_down = Command(MOVE_DOWN, 0.1)
-confirm = Command(CONFIRM, 0.1)
-open_menu = Command(OPEN_MENU, 0.1)
-wait = Command(WAIT, 3)
+confirm = Command(CONFIRM, 0.3)
+open_menu = Command(OPEN_MENU, 0.2)
+wait = Command(WAIT, 3.5)
+intermission = Command(WAIT, 0.1)
 
 # set commands
 commands = [
-    wait,
-	confirm,
-    wait,
-    confirm,
-    confirm,
-    confirm,
+    wait,               # initial wait, switch into game
+	confirm,            # select stage
+    wait,               # wait until stage is loaded
+    confirm,            # open base panel menu
+    intermission,
+    confirm,            # choose Adell
+    intermission,
+    confirm,            # open Adell menu for moving
+    intermission,
+    move_up,            # move into right position
+    intermission,
     move_up,
+    intermission,
     move_up,
+    confirm,            # confirm movement
+    intermission,
+    confirm,            # open Adell menu for attacking
+    move_down,          # move cursor to Special
+    intermission,
+    move_down,
+    confirm,            # open Special menu
+    move_up,            # select Big Bang
+    intermission,
     move_up,
-    move_up,
-    confirm,
-    confirm,
+    confirm,            # confirm Special selection
+    intermission,
+    confirm,            # confirm target
+    move_down,          # move back to base panel
+    intermission,
     move_down,
+    intermission,
     move_down,
-    confirm,
-    move_up,
-    move_up,
-    confirm,
-    confirm,
-    move_down,
-    move_down,
-    move_down,
-    move_down,
-    confirm,
-    confirm,
-    confirm,
+    confirm,            # open basel menu, again
+    intermission,
+    confirm,            # choose Tink
+    intermission,
+    confirm,            # open Tink menu
+    intermission,
+    confirm,            # choose move           
+    move_right,         # move into the right position
+    intermission,
     move_right,
-    move_right,
     move_up,
+    intermission,
     move_up,
+    intermission,
     move_up,
-    move_up,
-    confirm,
-    confirm,
-    move_down,
-    move_down,
-    confirm,
-    move_down,
-    confirm,
-    confirm,
-    open_menu,
-    confirm,
+    confirm,            # confirm position
+    intermission,
+    intermission,
+    confirm,            # open Tink menu for attacking
+    move_down,          # select Special
+    intermission,
+    move_down,  
+    confirm,            # open Special menu
+    move_down,          # select Sonic Roll
+    confirm,            # confirm selection
+    intermission,
+    confirm,            # confirm target
+    open_menu,          # open menu for EXECUTE
+    confirm,            # EXECUTE
     wait,
-    confirm,
-    confirm,
-    wait
+    intermission,
+    wait,
+    confirm,            # confirm bonus
+    intermission,
+    confirm             # finish stage
 	]
 
 ########################## Logic ###########################
