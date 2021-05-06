@@ -50,25 +50,29 @@ commands = [
     wait,               # wait until stage is loaded
     confirm,            # open base panel menu
     intermission,
-    confirm,            # choose Adell
+    confirm,            # choose ULTIMA
     intermission,
-    confirm,            # open Adell menu for moving
+    confirm,            # open ULTIMA menu for moving
     intermission,
     move_up,            # move into right position
     intermission,
     move_up,
     intermission,
     move_up,
+    intermission,
+    move_up,
     confirm,            # confirm movement
     intermission,
-    confirm,            # open Adell menu for attacking
+    confirm,            # open ULTIMA menu for attacking
     move_down,          # move cursor to Special
     intermission,
     move_down,
     confirm,            # open Special menu
-    move_up,            # select Big Bang
+    move_down,            # select Winged Slayer
     intermission,
-    move_up,
+    move_down,
+    intermission,
+    move_down,
     confirm,            # confirm Special selection
     intermission,
     confirm,            # confirm target
@@ -77,11 +81,13 @@ commands = [
     move_down,
     intermission,
     move_down,
+    intermission,
+    move_down,
     confirm,            # open basel menu, again
     intermission,
-    confirm,            # choose Tink
+    confirm,            # choose Fan
     intermission,
-    confirm,            # open Tink menu
+    confirm,            # open Fan menu
     intermission,
     confirm,            # choose move           
     move_right,         # move into the right position
@@ -95,12 +101,12 @@ commands = [
     confirm,            # confirm position
     intermission,
     intermission,
-    confirm,            # open Tink menu for attacking
+    confirm,            # open Fan menu for attacking
     move_down,          # select Special
     intermission,
     move_down,  
     confirm,            # open Special menu
-    move_down,          # select Sonic Roll
+    intermission,       # select Blade Rish
     confirm,            # confirm selection
     intermission,
     confirm,            # confirm target
